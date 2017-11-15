@@ -230,11 +230,18 @@ public class GameController : MonoBehaviour , IPointerClickHandler  {
         }
     }
 
-    private void HideCartVisability()
+    public void CardsVisabilityFalse()
     {
         foreach (Image Image in HideImages)
         {
             Image.gameObject.SetActive(true);
+        }
+    }
+    public void CardVisabilityTrue()
+    {
+        foreach (Image Image in HideImages)
+        {
+            Image.gameObject.SetActive(false);
         }
     }
 
@@ -273,7 +280,7 @@ public class GameController : MonoBehaviour , IPointerClickHandler  {
             PrizeInfoText[i].text = temp;
         }
         SetWhiteColorToAllCards(PrizeInfoText);
-        HideCartVisability();
+        CardsVisabilityFalse();
     }
     private void SetWhiteColorToAllCards(Text[] CardTextField)
     {
